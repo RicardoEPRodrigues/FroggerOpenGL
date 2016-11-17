@@ -1,3 +1,7 @@
+# CLION
+.idea
+
+# CMAKE
 CMakeCache.txt
 CMakeFiles
 CMakeScripts
