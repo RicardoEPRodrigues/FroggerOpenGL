@@ -13,9 +13,10 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class Car : public HitableObject, public ResetableObject, public ComposedObject {
-public:
-	Car();
-	virtual ~Car();
+    public:
+        Car();
+
+        virtual ~Car();
 };
 
 #endif /* CAR_H_ */

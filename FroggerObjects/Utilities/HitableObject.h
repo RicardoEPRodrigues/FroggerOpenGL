@@ -10,27 +10,29 @@
 
 #include "../../GraphicLib/GameObjects/GameObject.h"
 
-class HitableObject: public virtual GameObject {
-protected:
-	Vector3 _min_bounds, _max_bounds;
+class HitableObject : public virtual GameObject {
+    protected:
+        Vector3 _min_bounds, _max_bounds;
 
-	// True if the objects collide.
-	static bool hitAux(Vector3 firstMinBounds, Vector3 firstMaxBounds,
-			Vector3 secondMinBounds, Vector3 secondMaxBounds, bool compareZ);
-public:
-	HitableObject(Vector3 minBounds, Vector3 maxBounds);
-	virtual ~HitableObject();
+        // True if the objects collide.
+        static bool hitAux(Vector3 firstMinBounds, Vector3 firstMaxBounds,
+                           Vector3 secondMinBounds, Vector3 secondMaxBounds, bool compareZ);
 
-	// true if the objects collide.
-	bool isHit(HitableObject * object, bool compareZ);
+    public:
+        HitableObject(Vector3 minBounds, Vector3 maxBounds);
 
-	const Vector3& getMaxBounds() const {
-		return _max_bounds;
-	}
+        virtual ~HitableObject();
 
-	const Vector3& getMinBounds() const {
-		return _min_bounds;
-	}
+        // true if the objects collide.
+        bool isHit(HitableObject* object, bool compareZ);
+
+        const Vector3& getMaxBounds() const {
+            return _max_bounds;
+        }
+
+        const Vector3& getMinBounds() const {
+            return _min_bounds;
+        }
 };
 
 #endif /* HITABLEOBJECT_H_ */

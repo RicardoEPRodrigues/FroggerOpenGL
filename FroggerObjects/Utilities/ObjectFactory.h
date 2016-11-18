@@ -23,29 +23,44 @@
 #include "../ComplexObjects/Particle.h"
 
 class ObjectFactory {
-public:
-	ObjectFactory();
-	virtual ~ObjectFactory();
+    public:
+        ObjectFactory();
 
-	Cube* getBounderies();
-	Frog* getFrog();
+        virtual ~ObjectFactory();
 
-	Car * getCar(float laneY);
-	Bus * getBus(float laneY);
-	Timberlog * getTimberlog(float laneY);
-	Turtle * getTurtle(float laneY);
+        Cube* getBounderies();
 
-	River * getRiver();
-	Riverside * getRiverside();
-	Road * getRoad();
-	Roadside * getRoadside();
-	GameObject * getBelowRiver();
-	Roadside * getBetweenRoadside();
-	Tree * getBillboard();
-	Particle * getParticleNorth();
-	Particle * getParticleSouth();
-	Particle * getParticleEast();
-	Particle * getParticleWest();
+        Frog* getFrog();
+
+        Car* getCar(float laneY);
+
+        Bus* getBus(float laneY);
+
+        Timberlog* getTimberlog(float laneY);
+
+        Turtle* getTurtle(float laneY);
+
+        River* getRiver();
+
+        Riverside* getRiverside();
+
+        Road* getRoad();
+
+        Roadside* getRoadside();
+
+        GameObject* getBelowRiver();
+
+        Roadside* getBetweenRoadside();
+
+        Tree* getBillboard();
+
+        Particle* getParticleNorth();
+
+        Particle* getParticleSouth();
+
+        Particle* getParticleEast();
+
+        Particle* getParticleWest();
 
 };
 

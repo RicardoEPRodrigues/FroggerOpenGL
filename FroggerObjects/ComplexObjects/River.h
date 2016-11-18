@@ -13,9 +13,10 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class River : public HitableObject, public StaticObject, public ComposedObject {
-public:
-	River();
-	virtual ~River();
+    public:
+        River();
+
+        virtual ~River();
 };
 
 #endif /* RIVER_H_ */

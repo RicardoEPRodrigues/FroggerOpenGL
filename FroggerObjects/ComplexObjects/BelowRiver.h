@@ -12,9 +12,10 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class BelowRiver : public StaticObject, public ComposedObject {
-public:
-	BelowRiver();
-	virtual ~BelowRiver();
+    public:
+        BelowRiver();
+
+        virtual ~BelowRiver();
 };
 
 #endif /* BELOWRIVER_H_ */

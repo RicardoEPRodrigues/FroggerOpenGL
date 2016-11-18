@@ -10,10 +10,11 @@
 
 #include "../../GraphicLib/CameraObjects/OrthogonalCamera.h"
 
-class TopOrthoCamera: public OrthogonalCamera {
-public:
-	TopOrthoCamera();
-	virtual ~TopOrthoCamera();
+class TopOrthoCamera : public OrthogonalCamera {
+    public:
+        TopOrthoCamera();
+
+        virtual ~TopOrthoCamera();
 };
 
 #endif /* TOPORTHOCAMERA_H_ */

@@ -8,14 +8,14 @@
 #include "Rectangle.h"
 
 Rectangle::Rectangle(MyMesh* mesh) :
-		SimpleObject(mesh) {
-	this->size = size;
+        SimpleObject(mesh) {
+    this->size = size;
 }
 
 Rectangle::~Rectangle() {
-	free(this->mesh);
+    free(this->mesh);
 }
 
 void Rectangle::init() {
-	createRectangle(this->mesh);
+    createRectangle(this->mesh);
 }

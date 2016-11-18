@@ -7,10 +7,8 @@
 
 #include "StaticObject.h"
 
-#include <cstring>
+StaticObject::StaticObject() : GameObject() {
 
-StaticObject::StaticObject() : GameObject(){
-	
 }
 
 StaticObject::~StaticObject() {

@@ -12,15 +12,20 @@
 #include "../Vector3.h"
 
 class DynamicObject : public virtual GameObject {
-private:
-	Vector3 _speed;
-public:
-	DynamicObject();
-	virtual ~DynamicObject();
-	void update(double delta_t);
-	void setSpeed(const Vector3& speed);
-	void setSpeed(double x, double y, double z);
-	Vector3 getSpeed();
+    private:
+        Vector3 _speed;
+    public:
+        DynamicObject();
+
+        virtual ~DynamicObject();
+
+        void update(double delta_t);
+
+        void setSpeed(const Vector3& speed);
+
+        void setSpeed(double x, double y, double z);
+
+        Vector3 getSpeed();
 };
 
 #endif /* DYNAMICOBJECT_H_ */

@@ -11,11 +11,13 @@
 #include "../../GraphicLib/GameObjects/SimpleObject.h"
 #include "../../GraphicLib/GameObjects/StaticObject.h"
 
-class Sphere: public SimpleObject, public StaticObject {
-public:
-	Sphere(MyMesh* mesh);
-	virtual ~Sphere();
-	void init();
+class Sphere : public SimpleObject, public StaticObject {
+    public:
+        Sphere(MyMesh* mesh);
+
+        virtual ~Sphere();
+
+        void init();
 };
 
 #endif /* SPHERE_H_ */

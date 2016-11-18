@@ -12,9 +12,10 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class Roadside : public StaticObject, public ComposedObject {
-public:
-	Roadside();
-	virtual ~Roadside();
+    public:
+        Roadside();
+
+        virtual ~Roadside();
 };
 
 #endif /* ROADSIDE_H_ */

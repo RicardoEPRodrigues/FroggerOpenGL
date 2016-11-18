@@ -10,14 +10,17 @@
 
 #include "Camera.h"
 
-class PerspectiveCamera: public Camera {
-private:
-	double _fovy;
-public:
-	PerspectiveCamera(double fovy, double zNear, double zFar);
-	virtual ~PerspectiveCamera();
-	virtual void update(float camX, float camY, float camZ);
-	void computeProjectionMatrix(Engine * engine, float ratio);
+class PerspectiveCamera : public Camera {
+    private:
+        double _fovy;
+    public:
+        PerspectiveCamera(double fovy, double zNear, double zFar);
+
+        virtual ~PerspectiveCamera();
+
+        virtual void update(float camX, float camY, float camZ);
+
+        void computeProjectionMatrix(Engine* engine, float ratio);
 };
 
 #endif /* PERSPECTIVECAMERA_H_ */

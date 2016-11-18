@@ -11,27 +11,29 @@
 #include "../../GraphicLib/GameObjects/DynamicObject.h"
 
 class ResetableObject : public DynamicObject {
-private:
-	int _resetTime;
-	Vector3 _resetPosition;
-public:
-	ResetableObject();
-	virtual ~ResetableObject();
+    private:
+        int _resetTime;
+        Vector3 _resetPosition;
+    public:
+        ResetableObject();
 
-	void setResetPosition(float x, float y, float z ) {
-		this->_resetPosition.set(x,y,z);
-	}
+        virtual ~ResetableObject();
 
-	void resetPosition();
+        void setResetPosition(float x, float y, float z) {
+            this->_resetPosition.set(x, y, z);
+        }
 
-	void die();
-	void respawn();
+        void resetPosition();
 
-	int getResetTime() const {
-		return _resetTime;
-	}
+        void die();
 
-	void updateResetTime();
+        void respawn();
+
+        int getResetTime() const {
+            return _resetTime;
+        }
+
+        void updateResetTime();
 };
 
 #endif /* RESETABLEOBJECT_H_ */

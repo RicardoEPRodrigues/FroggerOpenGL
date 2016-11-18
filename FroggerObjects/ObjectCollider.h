@@ -13,26 +13,28 @@
 #include "list"
 
 class ObjectCollider {
-	Frog * _player;
-	HitableObject * _river;
-	std::list<HitableObject *> * _friendly_objects, * _enemy_objects;
-public:
-	ObjectCollider();
-	virtual ~ObjectCollider();
+        Frog* _player;
+        HitableObject* _river;
+        std::list<HitableObject*>* _friendly_objects, * _enemy_objects;
+    public:
+        ObjectCollider();
 
-	// True if the frog has died
-	bool DetectCollisions();
+        virtual ~ObjectCollider();
 
-	void addFriendlyObject(HitableObject *friendly);
-	void addEnemyObject(HitableObject *enemy);
+        // True if the frog has died
+        bool DetectCollisions();
 
-	void setPlayer(Frog* player) {
-		this->_player = player;
-	}
+        void addFriendlyObject(HitableObject* friendly);
 
-	void setRiver(HitableObject* river) {
-		this->_river = river;
-	}
+        void addEnemyObject(HitableObject* enemy);
+
+        void setPlayer(Frog* player) {
+            this->_player = player;
+        }
+
+        void setRiver(HitableObject* river) {
+            this->_river = river;
+        }
 };
 
 #endif /* OBJECTCOLLIDER_H_ */

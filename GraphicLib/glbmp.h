@@ -48,12 +48,11 @@ extern "C"
  * The struct returned by glbmp_LoadBitmap.  It has enough information to
  * enable you to use it in OpenGL texture creation.
  */
-typedef struct glbmp_t
-{
-   int width;                /* width of bitmap                              */
-   int height;               /* height of bitmap                             */
+typedef struct glbmp_t {
+    int width;                /* width of bitmap                              */
+    int height;               /* height of bitmap                             */
 
-   unsigned char * rgb_data; /* pointer to buffer, width*height*3 in size,
+    unsigned char* rgb_data; /* pointer to buffer, width*height*3 in size,
                                 holding RGB bitmap data                      */
 } glbmp_t;
 
@@ -97,7 +96,7 @@ typedef struct glbmp_t
  * specify GLBMP_ANY_SIZE), but again if you need byte-packed data, specify
  * GLBMP_BYTE_ALIGN in flags (may break OpenGL though).
  */
-int glbmp_LoadBitmap(const char * bmp_file, int flags, glbmp_t * p_bmp_out);
+int glbmp_LoadBitmap(const char* bmp_file, int flags, glbmp_t* p_bmp_out);
 
 
 /* glbmp_FreeBitmap
@@ -112,7 +111,7 @@ int glbmp_LoadBitmap(const char * bmp_file, int flags, glbmp_t * p_bmp_out);
  * Returns:
  * void
  */
-void glbmp_FreeBitmap(glbmp_t * p_bmp);
+void glbmp_FreeBitmap(glbmp_t* p_bmp);
 
 
 #ifdef __cplusplus

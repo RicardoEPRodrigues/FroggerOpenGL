@@ -15,6 +15,7 @@
 
 // GLUT is the toolkit to interface with the OS
 #include <GL/freeglut.h>
+
 #endif //GLLIBS_H_
 
 #include "../Engine.h"
@@ -23,76 +24,77 @@
 #include "../Vector4.h"
 
 class LightSource {
-private:
-	Vector4 _ambient;
-	Vector4 _diffuse;
-	Vector4 _specular;
+    private:
+        Vector4 _ambient;
+        Vector4 _diffuse;
+        Vector4 _specular;
 
-	bool _isSpot;
-	Vector4 _position;
-	Vector3 _direction;
+        bool _isSpot;
+        Vector4 _position;
+        Vector3 _direction;
 
-	double _cut_off;
-	double _exponent;
+        double _cut_off;
+        double _exponent;
 
-	float _constAtt;
-	float _lineAtt;
-	float _quadAtt;
+        float _constAtt;
+        float _lineAtt;
+        float _quadAtt;
 
-	bool _state;
-public:
-	LightSource();
-	virtual ~LightSource();
+        bool _state;
+    public:
+        LightSource();
 
-	void setAmbient(const Vector4& ambient) {
-		_ambient = ambient;
-	}
+        virtual ~LightSource();
 
-	void setCutOff(double cutOff) {
-		_cut_off = cutOff;
-	}
+        void setAmbient(const Vector4& ambient) {
+            _ambient = ambient;
+        }
 
-	void setDiffuse(const Vector4& diffuse) {
-		_diffuse = diffuse;
-	}
+        void setCutOff(double cutOff) {
+            _cut_off = cutOff;
+        }
 
-	void setDirection(const Vector3& direction) {
-		_direction = direction;
-	}
+        void setDiffuse(const Vector4& diffuse) {
+            _diffuse = diffuse;
+        }
 
-	void setExponent(double exponent) {
-		_exponent = exponent;
-	}
+        void setDirection(const Vector3& direction) {
+            _direction = direction;
+        }
 
-	void setPosition(const Vector4& position) {
-		_position = position;
-	}
+        void setExponent(double exponent) {
+            _exponent = exponent;
+        }
 
-	void setSpecular(const Vector4& specular) {
-		_specular = specular;
-	}
+        void setPosition(const Vector4& position) {
+            _position = position;
+        }
 
-	bool isState() const {
-		return _state;
-	}
+        void setSpecular(const Vector4& specular) {
+            _specular = specular;
+        }
 
-	void setState(bool state) {
-		_state = state;
-	}
+        bool isState() const {
+            return _state;
+        }
 
-	void setIsSpot(bool isSpot) {
-		_isSpot = isSpot;
-	}
+        void setState(bool state) {
+            _state = state;
+        }
 
-	void setAtt(float constAtt, float lineAtt, float quadAtt) {
-		_constAtt = constAtt;
-		_lineAtt = lineAtt;
-		_quadAtt = quadAtt;
-	}
+        void setIsSpot(bool isSpot) {
+            _isSpot = isSpot;
+        }
 
-	virtual void update() = 0;
+        void setAtt(float constAtt, float lineAtt, float quadAtt) {
+            _constAtt = constAtt;
+            _lineAtt = lineAtt;
+            _quadAtt = quadAtt;
+        }
 
-	void draw(Engine * engine, int index);
+        virtual void update() = 0;
+
+        void draw(Engine* engine, int index);
 };
 
 #endif /* LIGHTSOURCE_H_ */

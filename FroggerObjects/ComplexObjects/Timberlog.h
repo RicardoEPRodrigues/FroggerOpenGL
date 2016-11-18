@@ -13,9 +13,10 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class Timberlog : public HitableObject, public ResetableObject, public ComposedObject {
-public:
-	Timberlog();
-	virtual ~Timberlog();
+    public:
+        Timberlog();
+
+        virtual ~Timberlog();
 };
 
 #endif /* TIMBERLOG_H_ */

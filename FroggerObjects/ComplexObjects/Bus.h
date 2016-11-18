@@ -13,9 +13,10 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class Bus : public HitableObject, public ResetableObject, public ComposedObject {
-public:
-	Bus();
-	virtual ~Bus();
+    public:
+        Bus();
+
+        virtual ~Bus();
 };
 
 #endif /* BUS_H_ */

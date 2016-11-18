@@ -13,9 +13,10 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class Turtle : public HitableObject, public ResetableObject, public ComposedObject {
-public:
-	Turtle();
-	virtual ~Turtle();
+    public:
+        Turtle();
+
+        virtual ~Turtle();
 };
 
 #endif /* TURTLE_H_ */

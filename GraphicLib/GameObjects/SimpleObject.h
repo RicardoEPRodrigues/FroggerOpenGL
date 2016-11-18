@@ -10,18 +10,22 @@
 
 #include "GameObject.h"
 
-class SimpleObject: public virtual GameObject {
-protected:
-	MyMesh* mesh;
-	void drawInside(Engine engine);
-public:
-	SimpleObject();
-	SimpleObject(MyMesh * mesh);
-	virtual ~SimpleObject();
+class SimpleObject : public virtual GameObject {
+    protected:
+        MyMesh* mesh;
 
-	MyMesh* getMesh() {
-		return mesh;
-	}
+        void drawInside(Engine engine);
+
+    public:
+        SimpleObject();
+
+        SimpleObject(MyMesh* mesh);
+
+        virtual ~SimpleObject();
+
+        MyMesh* getMesh() {
+            return mesh;
+        }
 };
 
 #endif /* SIMPLEOBJECT_H_ */

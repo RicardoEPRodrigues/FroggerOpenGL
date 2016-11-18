@@ -8,13 +8,13 @@
 #include "Cylinder.h"
 
 Cylinder::Cylinder(MyMesh* mesh) :
-		SimpleObject(mesh) {
+        SimpleObject(mesh) {
 }
 
 Cylinder::~Cylinder() {
-	free(this->mesh);
+    free(this->mesh);
 }
 
 void Cylinder::init() {
-	createCylinder(1.0f, 0.5f, 20, this->mesh);
+    createCylinder(1.0f, 0.5f, 20, this->mesh);
 }

@@ -11,11 +11,13 @@
 #include "../../GraphicLib/GameObjects/SimpleObject.h"
 #include "../../GraphicLib/GameObjects/StaticObject.h"
 
-class Torus: public SimpleObject, public StaticObject  {
-public:
-	Torus(MyMesh* mesh);
-	virtual ~Torus();
-	void init();
+class Torus : public SimpleObject, public StaticObject {
+    public:
+        Torus(MyMesh* mesh);
+
+        virtual ~Torus();
+
+        void init();
 };
 
 #endif /* TORUS_H_ */

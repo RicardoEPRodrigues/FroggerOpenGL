@@ -8,13 +8,13 @@
 #include "Cube.h"
 
 Cube::Cube(MyMesh* mesh) :
-		SimpleObject(mesh) {
+        SimpleObject(mesh) {
 }
 
 Cube::~Cube() {
-	free(this->mesh);
+    free(this->mesh);
 }
 
 void Cube::init() {
-	createCube(1.0f, this->mesh);
+    createCube(1.0f, this->mesh);
 }

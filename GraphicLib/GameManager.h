@@ -15,6 +15,7 @@
 
 // GLUT is the toolkit to interface with the OS
 #include <GL/freeglut.h>
+
 #endif //GLLIBS_H_
 
 #include <list>
@@ -30,100 +31,115 @@
 #include "FlareManager.h"
 
 class GameManager {
-private:
-	std::list<GameObject *> * _opaque_game_objects;
-	std::list<Billboard *> * _billboard_game_objects;
-	std::list<GameObject *> * _translucent_game_objects;
-	std::list<GameObject *> * _firework_game_objects;
-protected:
-	int _frame_count;
-	int WindowHandle;
-	Vector3 _camPos;
-	Engine * _engine;
-	double _ratio;
-	int WinX , WinY;
-	std::vector<LightSource *> * _light_sources;
-	std::vector<Camera *> * _cameras;
-	Camera * _selected_camera;
-	int _fps;
-	bool _gamestate;
-	std::string _title;
-	int _update_speed;
-	//Texture Variables
-	GLuint TextureArray[13];
+    private:
+        std::list<GameObject*>* _opaque_game_objects;
+        std::list<Billboard*>* _billboard_game_objects;
+        std::list<GameObject*>* _translucent_game_objects;
+        std::list<GameObject*>* _firework_game_objects;
+    protected:
+        int _frame_count;
+        int WindowHandle;
+        Vector3 _camPos;
+        Engine* _engine;
+        double _ratio;
+        int WinX, WinY;
+        std::vector<LightSource*>* _light_sources;
+        std::vector<Camera*>* _cameras;
+        Camera* _selected_camera;
+        int _fps;
+        bool _gamestate;
+        std::string _title;
+        int _update_speed;
+        //Texture Variables
+        GLuint TextureArray[13];
 
-	FlareManager * flareManager;
-	int     xFlare;
-	int     yFlare;
+        FlareManager* flareManager;
+        int xFlare;
+        int yFlare;
 
-	virtual void applyStencil();
+        virtual void applyStencil();
 
-	void addOpaqueGameObject(GameObject * gameObject);
-	void addTranslucentGameObject(GameObject * gameObject);
-	void addBillboardGameObject(Billboard* gameObject);
-	void addFireworkGameObject(GameObject * gameObject);
-public:
-	// Fixed
-	GameManager(int numberCameras);
-	virtual ~GameManager();
-	void display();
-	void reshape(GLsizei w, GLsizei h);
-	void refresh();
-	unsigned int setupShaders();
+        void addOpaqueGameObject(GameObject* gameObject);
 
-	int getFps() const {
-		return _fps;
-	}
+        void addTranslucentGameObject(GameObject* gameObject);
 
-	void setFps(int fps) {
-		this->_fps = fps;
-	}
+        void addBillboardGameObject(Billboard* gameObject);
 
-	bool getGameState(){
-		return _gamestate;
-	}
-	
-	void setGameState(bool gamestate){
-		this->_gamestate = gamestate;
-	}
+        void addFireworkGameObject(GameObject* gameObject);
 
-	int getUpdateSpeed() const {
-		return _update_speed;
-	}
+    public:
+        // Fixed
+        GameManager(int numberCameras);
 
-	const Engine * getEngine() const {
-		return _engine;
-	}
+        virtual ~GameManager();
 
-	void setEngine(Engine* engine) {
-		_engine = engine;
-	}
+        void display();
 
-	void setWindowHandle(int windowHandle) {
-		WindowHandle = windowHandle;
-	}
+        void reshape(GLsizei w, GLsizei h);
 
-	int getWinX() const {
-		return WinX;
-	}
+        void refresh();
 
-	int getWinY() const {
-		return WinY;
-	}
+        unsigned int setupShaders();
 
-	const std::string& getTitle() const {
-		return _title;
-	}
+        int getFps() const {
+            return _fps;
+        }
 
-	// Modifiable
-	virtual void onTimer();
-	virtual void update();
-	virtual void init();
-	// Abstract
-	virtual void keyPressed(unsigned char key, int xx, int yy) = 0;
-	virtual void processMouseButtons(int button, int state, int xx, int yy) = 0;
-	virtual void processMouseMotion(int xx, int yy) = 0;
-	virtual void mouseWheel(int wheel, int direction, int x, int y) = 0;
+        void setFps(int fps) {
+            this->_fps = fps;
+        }
+
+        bool getGameState() {
+            return _gamestate;
+        }
+
+        void setGameState(bool gamestate) {
+            this->_gamestate = gamestate;
+        }
+
+        int getUpdateSpeed() const {
+            return _update_speed;
+        }
+
+        const Engine* getEngine() const {
+            return _engine;
+        }
+
+        void setEngine(Engine* engine) {
+            _engine = engine;
+        }
+
+        void setWindowHandle(int windowHandle) {
+            WindowHandle = windowHandle;
+        }
+
+        int getWinX() const {
+            return WinX;
+        }
+
+        int getWinY() const {
+            return WinY;
+        }
+
+        const std::string& getTitle() const {
+            return _title;
+        }
+
+        // Modifiable
+        virtual void onTimer();
+
+        virtual void update();
+
+        virtual void init();
+
+        // Abstract
+        virtual void keyPressed(unsigned char key, int xx, int yy) = 0;
+
+        virtual void processMouseButtons(int button, int state, int xx, int yy) = 0;
+
+        virtual void processMouseMotion(int xx, int yy) = 0;
+
+        virtual void mouseWheel(int wheel, int direction, int x, int y) = 0;
 };
 
 #endif /* GAMEMANAGER_H_ */

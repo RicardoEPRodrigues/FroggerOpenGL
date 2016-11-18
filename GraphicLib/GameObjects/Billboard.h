@@ -10,33 +10,37 @@
 
 #include "GameObject.h"
 
-class Billboard: public GameObject {
-private:
-	float size;
-	MyMesh * mesh;
-	Entity * lookAtEntity;
+class Billboard : public GameObject {
+    private:
+        float size;
+        MyMesh* mesh;
+        Entity* lookAtEntity;
 
-	void calculateLookAt(AVTMatrixModule *module, float * res);
-protected:
-	virtual void drawInside(Engine engine);
-public:
-	Billboard();
-	virtual ~Billboard();
+        void calculateLookAt(AVTMatrixModule* module, float* res);
 
-	virtual void init();
-	virtual void update(double delta_t);
+    protected:
+        virtual void drawInside(Engine engine);
 
-	void setMesh(MyMesh * mesh) {
-		this->mesh = mesh;
-	}
+    public:
+        Billboard();
 
-	Entity* getLookAtEntity() {
-		return lookAtEntity;
-	}
+        virtual ~Billboard();
 
-	void setLookAtEntity(Entity* lookAtEntity) {
-		this->lookAtEntity = lookAtEntity;
-	}
+        virtual void init();
+
+        virtual void update(double delta_t);
+
+        void setMesh(MyMesh* mesh) {
+            this->mesh = mesh;
+        }
+
+        Entity* getLookAtEntity() {
+            return lookAtEntity;
+        }
+
+        void setLookAtEntity(Entity* lookAtEntity) {
+            this->lookAtEntity = lookAtEntity;
+        }
 };
 
 #endif /* BILLBOARD_H_ */

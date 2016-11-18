@@ -12,9 +12,10 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class Riverside : public StaticObject, public ComposedObject {
-public:
-	Riverside();
-	virtual ~Riverside();
+    public:
+        Riverside();
+
+        virtual ~Riverside();
 };
 
 #endif /* RIVERSIDE_H_ */

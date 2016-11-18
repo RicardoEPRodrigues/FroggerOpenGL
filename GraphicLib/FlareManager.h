@@ -12,32 +12,33 @@
 #include <list>
 
 class FlareManager {
-private:
-	float fScale;  // Scale factor for adjusting overall size of flare elements.
-	float fMaxSize; // Max size of largest element, as proportion of screen width (0.0-1.0)
+    private:
+        float fScale;  // Scale factor for adjusting overall size of flare elements.
+        float fMaxSize; // Max size of largest element, as proportion of screen width (0.0-1.0)
 
-	std::list<Flare *> * elements;
+        std::list<Flare*>* elements;
 
-	Engine * engine;
+        Engine* engine;
 
-	void loadFlareFile(char *filename);
+        void loadFlareFile(char* filename);
 
-public:
-	FlareManager(Engine* engine);
-	virtual ~FlareManager();
+    public:
+        FlareManager(Engine* engine);
 
-	void renderFlare(int lx, int ly, int cx, int cy, float SCREENheight,
-			float SCREENwidth);
+        virtual ~FlareManager();
 
-	void init();
+        void renderFlare(int lx, int ly, int cx, int cy, float SCREENheight,
+                         float SCREENwidth);
 
-	Engine* getEngine() {
-		return engine;
-	}
+        void init();
 
-	void setEngine(Engine* engine) {
-		this->engine = engine;
-	}
+        Engine* getEngine() {
+            return engine;
+        }
+
+        void setEngine(Engine* engine) {
+            this->engine = engine;
+        }
 
 
 };

@@ -10,35 +10,38 @@
 
 #include "SimpleObject.h"
 
-class Flare: public SimpleObject {
-private:
-	float fDistance;        // Distance along ray from source (0.0-1.0)
-	float fSize;            // Size relative to flare envelope (0.0-1.0)
-public:
-	Flare();
-	virtual ~Flare();
-	virtual void init();
-	virtual void update(double delta_t);
+class Flare : public SimpleObject {
+    private:
+        float fDistance;        // Distance along ray from source (0.0-1.0)
+        float fSize;            // Size relative to flare envelope (0.0-1.0)
+    public:
+        Flare();
 
-	float getDistance()  {
-		return fDistance;
-	}
+        virtual ~Flare();
 
-	void setDistance(float distance) {
-		fDistance = distance;
-	}
+        virtual void init();
 
-	float getSize()  {
-		return fSize;
-	}
+        virtual void update(double delta_t);
 
-	void setSize(float size) {
-		fSize = size;
-	}
+        float getDistance() {
+            return fDistance;
+        }
 
-	void setRGBA(float r, float b, float g, float a);
+        void setDistance(float distance) {
+            fDistance = distance;
+        }
 
-	void setTexture(int textureId);
+        float getSize() {
+            return fSize;
+        }
+
+        void setSize(float size) {
+            fSize = size;
+        }
+
+        void setRGBA(float r, float b, float g, float a);
+
+        void setTexture(int textureId);
 };
 
 #endif /* FLARE_H_ */

@@ -10,10 +10,11 @@
 
 #include "../../GraphicLib/CameraObjects/PerspectiveCamera.h"
 
-class TopPerspCamera: public PerspectiveCamera {
-public:
-	TopPerspCamera();
-	virtual ~TopPerspCamera();
+class TopPerspCamera : public PerspectiveCamera {
+    public:
+        TopPerspCamera();
+
+        virtual ~TopPerspCamera();
 };
 
 #endif /* TOPPERSPCAMERA_H_ */

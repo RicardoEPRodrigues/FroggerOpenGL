@@ -9,26 +9,31 @@
 #define COMPOSEDOBJECT_H_
 
 #include "GameObject.h"
+
 #ifndef LIST_
 #define LIST_
+
 #include <list>
+
 #endif // LIST_
 
-class ComposedObject: public virtual GameObject {
-private:
-	std::list<GameObject*> *elems;
+class ComposedObject : public virtual GameObject {
+    private:
+        std::list<GameObject*>* elems;
 
-	void localInit();
+        void localInit();
 
-protected:
-	void drawInside(Engine engine);
-	void addElement(GameObject *element);
+    protected:
+        void drawInside(Engine engine);
 
-public:
-	ComposedObject();
-	virtual ~ComposedObject();
+        void addElement(GameObject* element);
 
-	void init();
+    public:
+        ComposedObject();
+
+        virtual ~ComposedObject();
+
+        void init();
 
 };
 

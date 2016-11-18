@@ -10,10 +10,11 @@
 
 #include "../../GraphicLib/GameObjects/Billboard.h"
 
-class Tree: public Billboard {
-public:
-	Tree();
-	virtual ~Tree();
+class Tree : public Billboard {
+    public:
+        Tree();
+
+        virtual ~Tree();
 };
 
 #endif /* TREE_H_ */

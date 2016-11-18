@@ -11,11 +11,13 @@
 #include "../../GraphicLib/GameObjects/SimpleObject.h"
 #include "../../GraphicLib/GameObjects/StaticObject.h"
 
-class Cube: public SimpleObject, public StaticObject  {
-public:
-	Cube(MyMesh* mesh);
-	virtual ~Cube();
-	void init();
+class Cube : public SimpleObject, public StaticObject {
+    public:
+        Cube(MyMesh* mesh);
+
+        virtual ~Cube();
+
+        void init();
 };
 
 #endif /* Cube_H_ */

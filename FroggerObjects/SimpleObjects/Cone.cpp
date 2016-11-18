@@ -8,13 +8,13 @@
 #include "Cone.h"
 
 Cone::Cone(MyMesh* mesh) :
-		SimpleObject(mesh) {
+        SimpleObject(mesh) {
 }
 
 Cone::~Cone() {
-	free(this->mesh);
+    free(this->mesh);
 }
 
 void Cone::init() {
-	createCone(1.0f, 1.0f, 20, this->mesh);
+    createCone(1.0f, 1.0f, 20, this->mesh);
 }

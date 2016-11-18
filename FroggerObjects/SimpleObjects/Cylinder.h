@@ -11,11 +11,13 @@
 #include "../../GraphicLib/GameObjects/SimpleObject.h"
 #include "../../GraphicLib/GameObjects/StaticObject.h"
 
-class Cylinder: public SimpleObject, public StaticObject  {
-public:
-	Cylinder(MyMesh* mesh);
-	virtual ~Cylinder();
-	void init();
+class Cylinder : public SimpleObject, public StaticObject {
+    public:
+        Cylinder(MyMesh* mesh);
+
+        virtual ~Cylinder();
+
+        void init();
 };
 
 #endif /* CYLINDER_H_ */

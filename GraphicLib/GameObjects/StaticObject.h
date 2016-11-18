@@ -11,11 +11,12 @@
 #include "GameObject.h"
 
 class StaticObject : public virtual GameObject {
-public:
-	StaticObject();
-	virtual ~StaticObject();
+    public:
+        StaticObject();
 
-	void update(double delta_t);
+        virtual ~StaticObject();
+
+        void update(double delta_t);
 };
 
 #endif /* STATICOBJECT_H_ */

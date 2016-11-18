@@ -8,13 +8,13 @@
 #include "Torus.h"
 
 Torus::Torus(MyMesh* mesh) :
-		SimpleObject(mesh) {
+        SimpleObject(mesh) {
 }
 
 Torus::~Torus() {
-	free(this->mesh);
+    free(this->mesh);
 }
 
 void Torus::init() {
-	createTorus(0.5f, 1.0f, 10, 20, this->mesh);
+    createTorus(0.5f, 1.0f, 10, 20, this->mesh);
 }

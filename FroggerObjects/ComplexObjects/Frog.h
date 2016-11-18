@@ -13,13 +13,18 @@
 #include "../../GraphicLib/GameObjects/ComposedObject.h"
 
 class Frog : public HitableObject, public ResetableObject, public ComposedObject {
-public:
-	Frog();
-	virtual ~Frog();
-	void Up();
-	void Down();
-	void Left();
-	void Right();
+    public:
+        Frog();
+
+        virtual ~Frog();
+
+        void Up();
+
+        void Down();
+
+        void Left();
+
+        void Right();
 };
 
 #endif /* FROG_H_ */
