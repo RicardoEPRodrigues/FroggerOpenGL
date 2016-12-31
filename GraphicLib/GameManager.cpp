@@ -146,7 +146,7 @@ void GameManager::display() {
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-    if (this->getGameState() == true) {
+    if (this->getGameState()) {
         glBlendFunc(GL_SRC_ALPHA, GL_ONE);
         for (gobjit = this->_firework_game_objects->begin();
              gobjit != this->_firework_game_objects->end(); gobjit++) {

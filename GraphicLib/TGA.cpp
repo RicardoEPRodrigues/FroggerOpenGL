@@ -1,19 +1,19 @@
-#include <GL/glew.h>
-#include <stdlib.h>
-#include <stdio.h>
 #include "TGA.h"
-#include "glbmp.h"
 
 //extern GLuint TextureArray[2];
+using namespace std;
 
-void TGA_Texture(unsigned int* textureArray, char* strFileName, int ID) {
+void TGA_Texture(unsigned int* textureArray, const char* strFileName, int ID) {
     tImageTGA* pBitMap;
     int textureType;
     if (!strFileName) return;
 
     pBitMap = Load_TGA(strFileName);
 
-    if (pBitMap == NULL) exit(0);
+    if (pBitMap == nullptr) {
+        exit(0);
+//        return;
+    }
 
 
     //Objecto textura a ser preenchido
@@ -33,12 +33,10 @@ void TGA_Texture(unsigned int* textureArray, char* strFileName, int ID) {
     glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 
 
-    if (pBitMap) {
-        if (pBitMap->data) {
-            free(pBitMap->data);
-        }
-        free(pBitMap);
+    if (pBitMap->data) {
+        free(pBitMap->data);
     }
+    free(pBitMap);
 }
 
 void loadTexture(unsigned int* textureArray, const char* bitmap_file, int ID) {
@@ -63,7 +61,7 @@ void loadTexture(unsigned int* textureArray, const char* bitmap_file, int ID) {
 }
 
 
-tImageTGA* Load_TGA(char* strfilename) {
+tImageTGA* Load_TGA(const char* strfilename) {
     //tImageTGA *pImgData	= NULL;
     //	FILE *pFile			= NULL;
     tImageTGA* pImgData;
@@ -75,7 +73,6 @@ tImageTGA* Load_TGA(char* strfilename) {
     byte bits = 0;
     int channels = 0;
     int stride = 0;
-    int i = 0;
 
     if ((pFile = fopen(strfilename, "rb")) == NULL) {
         printf("Error loading tga file.\n");
@@ -112,7 +109,7 @@ tImageTGA* Load_TGA(char* strfilename) {
 
                 fread(pLine, stride, 1, pFile);
 
-                for (i = 0; i < stride; i += channels) {
+                for (int i = 0; i < stride; i += channels) {
                     int temp = pLine[i];
                     pLine[i] = pLine[i + 2];
                     pLine[i + 2] = temp;
@@ -140,8 +137,9 @@ tImageTGA* Load_TGA(char* strfilename) {
                 pImgData->data[i * 3 + 1] = g;
                 pImgData->data[i * 3 + 2] = b;
             }
-        } else
+        } else {
             return NULL;
+        }
     } else {
 
         byte rleID = 0;
@@ -152,6 +150,7 @@ tImageTGA* Load_TGA(char* strfilename) {
         pImgData->data = new unsigned char[stride * height];
         byte* pColors = new byte[channels];
 
+        int i = 0;
         while (i < width * height) {
 
             fread(&rleID, sizeof(byte), 1, pFile);
@@ -204,7 +203,7 @@ tImageTGA* Load_TGA(char* strfilename) {
     return pImgData;
 } // End of Load_TGA function
 
-void loadRawTextures(unsigned int* textureArray, char* filename, int textureId) {
+void loadRawTextures(unsigned int* textureArray, const char* filename, int textureId) {
     FILE* f = fopen(filename, "rb");
     int nBytes;
 

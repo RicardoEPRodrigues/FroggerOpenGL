@@ -6,13 +6,10 @@
  */
 
 #include "AVTMatrixModule.h"
-#include <math.h>
-#include <stdlib.h>
-#include <string.h>
 
-#ifdef _WIN32
-#define M_PI       3.14159265358979323846f
-#endif
+//#ifdef _WIN32
+//#define M_PI       3.14159265358979323846f
+//#endif
 
 static inline float DegToRad(float degrees) {
     return (float) (degrees * (M_PI / 180.0f));

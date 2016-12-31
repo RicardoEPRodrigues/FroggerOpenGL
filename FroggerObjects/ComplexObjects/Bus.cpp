@@ -12,8 +12,6 @@
 #include "../SimpleObjects/Cylinder.h"
 #include "../SimpleObjects/Torus.h"
 
-#include <cstring>
-
 Bus::Bus() :
         HitableObject(Vector3(-12.0, -1.5, -0.5), Vector3(2, 1.5, 0.8)) {
     MyMesh* mesh = new MyMesh();

@@ -11,6 +11,9 @@
 #include <vector>
 #include <string>
 #include <GL/glew.h>
+#include <cmath>
+#include <stdlib.h>
+#include <string.h>
 
 /// number of settable matrices
 #define COUNT_MATRICES 3
@@ -157,7 +160,7 @@ class AVTMatrixModule {
          * \param point a float[4] representing a point
          * \param res a float[4] res = M * point
          */
-        void multMatrixPoint(ComputedMatrixTypes aType, float* point, float* res);
+//        void multMatrixPoint(ComputedMatrixTypes aType, float* point, float* res);
 
         /** vector cross product res = a x b
          * Note: memory for the result must be allocatted by the caller

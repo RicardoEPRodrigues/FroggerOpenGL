@@ -10,8 +10,6 @@
 #include "../SimpleObjects/Sphere.h"
 #include "../SimpleObjects/Cube.h"
 
-#include <cstring>
-
 Riverside::Riverside() : StaticObject() {
     MyMesh* mesh = new MyMesh();
 

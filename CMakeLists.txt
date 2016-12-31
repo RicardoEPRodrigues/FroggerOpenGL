@@ -1,9 +1,13 @@
 cmake_minimum_required(VERSION 3.5)
 project(FroggerOpenGl)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -g3 -O0 -fPIC -Wuninitialized -std=c++14")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}-std=c++14")
 
-include_directories(FroggerObjects GraphicLib shaders)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wall -g3 -Og -Wuninitialized")
+
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Ofast")
+
+include_directories(FroggerObjects GraphicLib shaders resources engine)
 
 set(SOURCE_FILES
         FroggerObjects/Cameras/FpsPerspCamera.cpp
@@ -120,13 +124,11 @@ set(SOURCE_FILES
         GraphicLib/glbmp.cpp
         GraphicLib/glbmp.h
         resources/particula.bmp
-        GraphicLib/TGA.cpp
-        GraphicLib/TGA.h
-        GraphicLib/Vector3.cpp
-        GraphicLib/Vector3.h
-        GraphicLib/Vector4.cpp
-        GraphicLib/Vector4.h
-        main.cpp)
+        GraphicLib/TGA.cpp GraphicLib/TGA.h
+        GraphicLib/Vector3.cpp GraphicLib/Vector3.h
+        GraphicLib/Vector4.cpp GraphicLib/Vector4.h
+        main.cpp
+        )
 
 find_package(OpenGL REQUIRED)
 find_package(GLUT REQUIRED)

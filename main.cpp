@@ -5,13 +5,10 @@
 
 #include <iostream>
 
+#include "FroggerObjects/FroggerGameManager.h"
 // include GLEW to access OpenGL 3.3 functions
-#include <GL/glew.h>
 
 // GLUT is the toolkit to interface with the OS
-#include <GL/freeglut.h>
-
-#include "FroggerObjects/FroggerGameManager.h"
 
 FroggerGameManager* manager;
 
@@ -101,7 +98,6 @@ void init() {
 //
 
 int main(int argc, char** argv) {
-
     manager = new FroggerGameManager();
 //  GLUT initialization
     glutInit(&argc, argv);

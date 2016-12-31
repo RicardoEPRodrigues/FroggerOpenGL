@@ -27,13 +27,11 @@ bool HitableObject::hitAux(Vector3 firstMinBounds, Vector3 firstMaxBounds,
                              && firstMaxBounds.getY() <= secondMaxBounds.getY()));
     // if compareZ is not active then the comparison if isZCollision is always true.
     bool isZCollision =
-            !compareZ ?
-            true :
-            ((firstMinBounds.getZ() >= secondMinBounds.getZ()
-              && firstMinBounds.getZ() <= secondMaxBounds.getZ())
-             || (firstMaxBounds.getZ() >= secondMinBounds.getZ()
-                 && firstMaxBounds.getZ()
-                    <= secondMaxBounds.getZ()));
+            !compareZ || (firstMinBounds.getZ() >= secondMinBounds.getZ()
+                          && firstMinBounds.getZ() <= secondMaxBounds.getZ())
+            || (firstMaxBounds.getZ() >= secondMinBounds.getZ()
+                             && firstMaxBounds.getZ()
+                                <= secondMaxBounds.getZ());
     return isXCollision && isYCollision && isZCollision;
 }
 

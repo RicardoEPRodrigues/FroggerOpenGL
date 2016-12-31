@@ -24,7 +24,7 @@ double Vector4::getW() {
 }
 
 void Vector4::set(double x, double y, double z, double w) {
-    this->Vector3::set(x, y, z);
+    Vector3::set(x, y, z);
     this->_w = w;
 }
 

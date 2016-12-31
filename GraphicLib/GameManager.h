@@ -18,11 +18,12 @@
 
 #endif //GLLIBS_H_
 
+#include "Engine.h"
+
 #include <list>
 #include <vector>
 #include <string>
 
-#include "Engine.h"
 #include "GameObjects/GameObject.h"
 #include "GameObjects/Billboard.h"
 #include "LightObjects/LightSource.h"

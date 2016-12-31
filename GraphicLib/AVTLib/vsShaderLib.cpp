@@ -32,9 +32,6 @@
  *
  ---------------------------------------------------------------*/
 
-#include <stdio.h>
-#include <stdlib.h>
-
 #include "vsShaderLib.h"
 
 // pre conditions are established with asserts
@@ -98,7 +95,7 @@ void
 VSShaderLib::loadShader(VSShaderLib::ShaderType st, std::string fileName) {
 
     // init should always be called first
-    assert(pInited == true);
+    assert(pInited);
 
     char* s = NULL;
 
@@ -414,6 +411,8 @@ VSShaderLib::setUniform(std::string name, void* value) {
         case GL_DOUBLE_MAT4x3:
             glProgramUniformMatrix4x3dv(pProgram, u.location, u.size, false, (const GLdouble*) value);
             break;
+        default:
+            break;
     }
 }
 
@@ -578,7 +577,7 @@ void
 VSShaderLib::addBlocks() {
 
     int count, dataSize, actualLen, activeUnif, maxUniLength;
-    int uniType, uniSize, uniOffset, uniMatStride, uniArrayStride, auxSize;
+    int uniType, uniSize, uniOffset, uniMatStride, uniArrayStride, auxSize = 0;
     char* name, * name2;
 
     UniformBlock block;
@@ -651,6 +650,8 @@ VSShaderLib::addBlocks() {
                         case GL_DOUBLE_MAT4x2:
                         case GL_DOUBLE_MAT4x3:
                             auxSize = 4 * uniMatStride;
+                            break;
+                        default:
                             break;
                     }
                 } else

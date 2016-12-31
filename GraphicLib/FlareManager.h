@@ -20,7 +20,7 @@ class FlareManager {
 
         Engine* engine;
 
-        void loadFlareFile(char* filename);
+        void loadFlareFile(const char* filename);
 
     public:
         FlareManager(Engine* engine);

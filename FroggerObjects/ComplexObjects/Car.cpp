@@ -7,8 +7,6 @@
 
 #include "Car.h"
 
-#include <cstring>
-
 #include "../SimpleObjects/Sphere.h"
 #include "../SimpleObjects/Torus.h"
 
@@ -17,7 +15,6 @@ Car::Car() :
 
     MyMesh* mesh = new MyMesh();
     MyMesh* mesh2 = new MyMesh();
-    MyMesh* mesh3 = new MyMesh();
 
     float amb[] = {0.0f, 0.0f, 0.1f, 1.0f};
     float diff[] = {0.0f, 0.0f, 0.8f, 1.0f};

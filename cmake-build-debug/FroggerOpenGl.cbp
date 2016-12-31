@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="FroggerOpenGl"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FroggerOpenGl">
+				<Option output="/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/FroggerOpenGl" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects"/>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib"/>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/shaders"/>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/resources"/>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/engine"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 FroggerOpenGl"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FroggerOpenGl/fast">
+				<Option output="/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/FroggerOpenGl" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects"/>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib"/>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/shaders"/>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/resources"/>
+					<Add directory="/home/ricardo/Documents/Projects/FroggerOpenGl/engine"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/6/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/usr/include/c++/6"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/6"/>
+					<Add directory="/usr/include/c++/6/backward"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 FroggerOpenGl/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/ricardo/Documents/Projects/FroggerOpenGl/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Cameras/FpsPerspCamera.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Cameras/FpsPerspCamera.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Cameras/TopOrthoCamera.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Cameras/TopOrthoCamera.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Cameras/TopPerspCamera.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Cameras/TopPerspCamera.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/BelowRiver.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/BelowRiver.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Bus.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Bus.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Car.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Car.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Frog.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Frog.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Particle.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Particle.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/River.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/River.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Riverside.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Riverside.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Road.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Road.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Roadside.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Roadside.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Timberlog.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Timberlog.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Tree.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Tree.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Turtle.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ComplexObjects/Turtle.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/FroggerGameManager.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/FroggerGameManager.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Lights/Daylight.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Lights/Daylight.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Lights/Nightlight.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Lights/Nightlight.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Lights/Spotlight.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Lights/Spotlight.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/MovementEngine.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/MovementEngine.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ObjectCollider.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/ObjectCollider.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Cone.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Cone.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Cube.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Cube.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Cylinder.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Cylinder.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Rectangle.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Rectangle.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Sphere.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Sphere.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Torus.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/SimpleObjects/Torus.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Utilities/HitableObject.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Utilities/HitableObject.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Utilities/ObjectFactory.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Utilities/ObjectFactory.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Utilities/ResetableObject.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/FroggerObjects/Utilities/ResetableObject.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/AVTMatrixModule.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/AVTMatrixModule.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/VertexAttrDef.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/basic_geometry.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/basic_geometry.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/cube.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/rectangle.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/rectanglexy.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/vsShaderLib.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/AVTLib/vsShaderLib.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/CameraObjects/Camera.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/CameraObjects/Camera.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/CameraObjects/OrthogonalCamera.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/CameraObjects/OrthogonalCamera.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/CameraObjects/PerspectiveCamera.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/CameraObjects/PerspectiveCamera.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/Engine.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/Engine.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/Entity.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/Entity.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/FlareManager.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/FlareManager.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameManager.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameManager.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/Billboard.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/Billboard.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/ComposedObject.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/ComposedObject.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/DynamicObject.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/DynamicObject.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/Flare.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/Flare.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/GameObject.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/GameObject.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/SimpleObject.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/SimpleObject.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/StaticObject.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/GameObjects/StaticObject.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/LightObjects/LightSource.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/LightObjects/LightSource.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/TGA.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/TGA.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/Vector3.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/Vector3.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/Vector4.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/Vector4.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare.txt">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/Flare1.bmp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/Flare2.bmp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/Flare3.bmp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/Flare4.bmp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/Sun.bmp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/crcl.raw">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/flar.raw">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/hxgn.raw">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/ring.raw">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/flare_textures/sun.raw">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/glbmp.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/GraphicLib/glbmp.h">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/main.cpp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/resources/particula.bmp">
+			<Option target="FroggerOpenGl"/>
+		</Unit>
+		<Unit filename="/home/ricardo/Documents/Projects/FroggerOpenGl/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

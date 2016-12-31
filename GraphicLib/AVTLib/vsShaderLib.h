@@ -33,9 +33,8 @@
 #ifndef __VSShaderLib__
 #define __VSShaderLib__
 
-#include <string>
-#include <vector>
 #include <map>
+#include <string>
 #include <GL/glew.h>
 
 

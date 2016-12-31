@@ -7,8 +7,6 @@
 
 #include "ObjectFactory.h"
 
-#include <cstring>
-
 ObjectFactory::ObjectFactory() {
 
 }

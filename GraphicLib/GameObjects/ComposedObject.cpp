@@ -18,7 +18,7 @@ ComposedObject::ComposedObject() {
 ComposedObject::~ComposedObject() {
     std::list<GameObject*>::iterator it;
     for (it = this->elems->begin(); it != this->elems->end(); it++) {
-        free((* it));
+        free((*it));
     }
     free(this->elems);
 }

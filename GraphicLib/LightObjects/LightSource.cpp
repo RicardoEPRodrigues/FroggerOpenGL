@@ -7,7 +7,7 @@
 
 #include "LightSource.h"
 
-#include <cstring>
+using namespace std;
 
 LightSource::LightSource() {
 
@@ -39,80 +39,40 @@ void LightSource::draw(Engine* engine, int index) {
     engine->matrixModule->multMatrixPoint(VIEW, spotDir, res1);
     glUniform4fv(engine->sDir_uniformId, 1, res1);
 
-    /**/ //PROBLEMAS A COMPILAR
-    char* source;
-
-    switch (index) {
-        case 0:
-            source = "lit[0]";
-            break;
-        case 1:
-            source = "lit[1]";
-            break;
-        case 2:
-            source = "lit[2]";
-            break;
-        case 3:
-            source = "lit[3]";
-            break;
-        case 4:
-            source = "lit[4]";
-            break;
-        case 5:
-            source = "lit[5]";
-            break;
-        case 6:
-            source = "lit[6]";
-            break;
-        case 7:
-            source = "lit[7]";
-            break;
-        case 8:
-            source = "lit[8]";
-            break;
-        case 9:
-            source = "lit[9]";
-            break;
-    }
+    string source = "lit[" + to_string(index) + "]";
 
     char argument[40];
 
-    strcpy(argument, source);
-    std::strcat(argument, ".ambient");
+    strcpy(argument, (source + ".ambient").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
     float amb[4] = {this->_ambient.getX(), this->_ambient.getY(), this->_ambient.getZ(), this->_ambient.getW()};
     glUniform4fv(loc, 1, amb);
 
-    strcpy(argument, source);
-    std::strcat(argument, ".diffuse");
+    strcpy(argument, (source + ".diffuse").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
     float dif[4] = {this->_diffuse.getX(), this->_diffuse.getY(), this->_diffuse.getZ(), this->_diffuse.getW()};
     glUniform4fv(loc, 1, dif);
 
-    strcpy(argument, source);
-    std::strcat(argument, ".specular");
+    strcpy(argument, (source + ".specular").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
     float spc[4] = {this->_specular.getX(), this->_specular.getY(), this->_specular.getZ(), this->_specular.getW()};
     glUniform4fv(loc, 1, spc);
 
-    strcpy(argument, source);
-    std::strcat(argument, ".isSpot");
+    strcpy(argument, (source + ".isSpot").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
-    if (this->_isSpot == true)
+    if (this->_isSpot)
         glUniform1f(loc, 1.0f);
     else
         glUniform1f(loc, 0.0f);
 
-    strcpy(argument, source);
-    std::strcat(argument, ".isLocal");
+    strcpy(argument, (source + ".isLocal").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
     if (this->_position.getW() == 1.0f)
         glUniform1f(loc, 1.0f);
     else
         glUniform1f(loc, 0.0f);
 
-    strcpy(argument, source);
-    std::strcat(argument, ".position");
+    strcpy(argument, (source + ".position").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
     float pos[4] = {this->_position.getX(), this->_position.getY(), this->_position.getZ(), this->_position.getW()};
     engine->matrixModule->multMatrixPoint(VIEW, pos, res);
@@ -125,16 +85,14 @@ void LightSource::draw(Engine* engine, int index) {
     //float dir1[3] = { res1[0], res1[1], res1[2] };
     //glUniform3fv(loc, 1, dir1);
 
-    strcpy(argument, source);
-    std::strcat(argument, ".spotDirection");
+    strcpy(argument, (source + ".spotDirection").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
     //float dir[3] = { res1[0], res1[1], res1[2]/*, 1.0f*/ };
     //engine->matrixModule->multMatrixPoint(VIEW, dir, res1);
     float dir1[3] = {res1[0], res1[1], res1[2]};
     glUniform3fv(loc, 1, dir1);
 
-    strcpy(argument, source);
-    std::strcat(argument, ".spotCosCutoff");
+    strcpy(argument, (source + ".spotCosCutoff").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
     glUniform1f(loc, this->_cut_off);
 
@@ -154,10 +112,9 @@ void LightSource::draw(Engine* engine, int index) {
     //loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*)&argument);
     //glUniform1f(loc, this->_quadAtt);
 
-    strcpy(argument, source);
-    std::strcat(argument, ".isEnabled");
+    strcpy(argument, (source + ".isEnabled").c_str());
     loc = glGetUniformLocation(engine->shader.getProgramIndex(), (const GLchar*) &argument);
-    if (this->_state == true)
+    if (this->_state)
         glUniform1f(loc, 1.0f);
     else
         glUniform1f(loc, 0.0f);

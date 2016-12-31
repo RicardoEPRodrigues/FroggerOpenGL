@@ -9,8 +9,6 @@
 
 #include "../SimpleObjects/Sphere.h"
 
-#include <cstring>
-
 Turtle::Turtle() :
         HitableObject(Vector3(-2, -1, -1), Vector3(2, 1, 1)) {
     MyMesh* mesh = new MyMesh();

@@ -7,8 +7,6 @@
 
 #include "Tree.h"
 
-#include <cstring>
-
 Tree::Tree() {
     MyMesh* mesh = new MyMesh();
 

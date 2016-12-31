@@ -10,18 +10,9 @@
 
  Jo�o Madeiras Pereira
  ----------------------------------------------------*/
-#include <string>
-#include <assert.h>
-#include <stdlib.h>
-#include <vector>
-
-// include GLEW to access OpenGL 3.3 functions
-#include <GL/glew.h>
-
-// GLUT is the toolkit to interface with the OS
-#include <cmath>
-#include "VertexAttrDef.h"
 #include "basic_geometry.h"
+
+#include "VertexAttrDef.h"
 
 #include "rectangle.h"
 #include "rectanglexy.h"
@@ -100,12 +91,12 @@ void createCone(float height, float baseRadius, int sides, MyMesh* mesh) {
     computeVAO((p.size() - 4) / 2, &(p[2]), &(p[0]), sides, 0.0f, mesh);
 }
 
-void computeVAO(int numP, float* p, float* points, int sides, float smoothCos,
+void computeVAO(int numP, float* p, float* points, unsigned int sides, float smoothCos,
                 MyMesh* mesh) {
     // Compute and store vertices
 
-    int numSides = sides;
-    int numPoints = numP + 2;
+    unsigned int numSides = sides;
+//    int numPoints = numP + 2;
 
     float* vertex = (float*) malloc(
             sizeof(float) * numP * 2 * 4 * (numSides + 1));
@@ -120,9 +111,9 @@ void computeVAO(int numP, float* p, float* points, int sides, float smoothCos,
     int smooth;
     std::vector<int> smoothness;
     int k = 0;
-    for (int i = 0; i < numP; i++) {
+    for (unsigned int i = 0; i < numP; i++) {
         revSmoothNormal2(points + (i * 2), &nx, &ny, smoothCos, 0);
-        for (int j = 0; j <= numSides; j++) {
+        for (unsigned int j = 0; j <= numSides; j++) {
 
             if ((i == 0 && p[0] == 0.0f)
                 || (i == numP - 1 && p[(i + 1) * 2] == 0.0))
@@ -155,26 +146,20 @@ void computeVAO(int numP, float* p, float* points, int sides, float smoothCos,
 
             if (!smooth) {
                 smoothness.push_back(1);
-                for (int j = 0; j <= numSides; j++) {
+                for (unsigned int j = 0; j <= numSides; j++) {
 
                     normal[((k) * (numSides + 1) + j) * 4] = nx * cos(j * inc);
                     normal[((k) * (numSides + 1) + j) * 4 + 1] = ny;
-                    normal[((k) * (numSides + 1) + j) * 4 + 2] = nx
-                                                                 * sin(-j * inc);
+                    normal[((k) * (numSides + 1) + j) * 4 + 2] = nx * sin(-j * inc);
                     normal[((k) * (numSides + 1) + j) * 4 + 3] = 0.0f;
 
-                    vertex[((k) * (numSides + 1) + j) * 4] = p[(i + 1) * 2]
-                                                             * cos(j * inc);
-                    vertex[((k) * (numSides + 1) + j) * 4 + 1] = p[((i + 1) * 2)
-                                                                   + 1];
-                    vertex[((k) * (numSides + 1) + j) * 4 + 2] = p[(i + 1) * 2]
-                                                                 * sin(-j * inc);
+                    vertex[((k) * (numSides + 1) + j) * 4] = p[(i + 1) * 2] * cos(j * inc);
+                    vertex[((k) * (numSides + 1) + j) * 4 + 1] = p[((i + 1) * 2) + 1];
+                    vertex[((k) * (numSides + 1) + j) * 4 + 2] = p[(i + 1) * 2] * sin(-j * inc);
                     vertex[((k) * (numSides + 1) + j) * 4 + 3] = 1.0f;
 
-                    textco[((k) * (numSides + 1) + j) * 4] = ((j + 0.0f)
-                                                              / numSides);
-                    textco[((k) * (numSides + 1) + j) * 4 + 1] = (i + 1 + 0.0f)
-                                                                 / (numP - 1);
+                    textco[((k) * (numSides + 1) + j) * 4] = ((j + 0.0f) / numSides);
+                    textco[((k) * (numSides + 1) + j) * 4 + 1] = (i + 1 + 0.0f) / (numP - 1);
                     textco[((k) * (numSides + 1) + j) * 4 + 2] = 0;
                     textco[((k) * (numSides + 1) + j) * 4 + 3] = 1.0f;
                 }
@@ -188,8 +173,8 @@ void computeVAO(int numP, float* p, float* points, int sides, float smoothCos,
             sizeof(unsigned int) * (numP - 1) * (numSides + 1) * 6);
     unsigned int count = 0;
     k = 0;
-    for (int i = 0; i < numP - 1; ++i) {
-        for (int j = 0; j < numSides; ++j) {
+    for (unsigned int i = 0; i < numP - 1; ++i) {
+        for (unsigned int j = 0; j < numSides; ++j) {
 
             /*if (i != 0 || p[0] != 0.0)*/{
                 faceIndex[count++] = k * (numSides + 1) + j;

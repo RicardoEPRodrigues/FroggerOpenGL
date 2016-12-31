@@ -7,8 +7,6 @@
 
 #include "SimpleObject.h"
 
-#include <cstring>
-
 SimpleObject::SimpleObject() {
     this->mesh = new MyMesh();
     float amb2[] = {0.1f, 0.1f, 0.1f, 1.0f};

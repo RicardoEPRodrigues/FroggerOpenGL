@@ -1,5 +1,16 @@
-#define TGA_RGB        2
-#define TGA_A        3
+
+
+#ifndef TGA_H_
+#define TGA_H_
+
+#include <string>
+#include <cstdlib>
+#include <GL/glew.h>
+#include <malloc.h>
+#include "glbmp.h"
+
+//#define TGA_RGB        2
+//#define TGA_A        3
 #define TGA_RLE        10
 
 typedef GLushort WORD;
@@ -13,16 +24,15 @@ typedef struct tImageTGA {
 } tImageTGA;
 
 
-void TGA_Texture(unsigned int* textureArray, char* strFileName, int ID);
+void TGA_Texture(unsigned int* textureArray, const char* strFileName, int ID);
 
 void loadTexture(unsigned int* textureArray, const char* bitmap_file, int ID);
 
-tImageTGA* Load_TGA(char* filename);
+tImageTGA* Load_TGA(const char* filename);
 
-void loadRawTextures(unsigned int* textureArray, char* filename, int textureId);
-
-
-
+void loadRawTextures(unsigned int* textureArray, const char* filename, int textureId);
 
 // www.morrowland.com
 // apron@morrowland.com
+
+#endif /* TGA_H_ */

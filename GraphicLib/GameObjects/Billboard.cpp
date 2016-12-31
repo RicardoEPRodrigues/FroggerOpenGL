@@ -6,7 +6,6 @@
  */
 
 #include "Billboard.h"
-#include <cmath>
 
 Billboard::Billboard() {
     this->size = size;

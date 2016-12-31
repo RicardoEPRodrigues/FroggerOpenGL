@@ -7,8 +7,6 @@
 
 #include "Flare.h"
 
-#include <cstring>
-
 Flare::Flare() {
     this->fDistance = 0;
     this->fSize = 0;

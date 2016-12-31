@@ -10,8 +10,6 @@
 #include "../SimpleObjects/Sphere.h"
 #include "../SimpleObjects/Cylinder.h"
 
-#include <cstring>
-
 Timberlog::Timberlog() :
         HitableObject(Vector3(-2, -1, -1), Vector3(2, 1, 1)) {
     MyMesh* mesh = new MyMesh();

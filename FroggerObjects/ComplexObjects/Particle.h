@@ -17,8 +17,7 @@ class Particle : public DynamicObject, public ComposedObject {
 
     public:
 #define frand()            ((float)std::rand()/RAND_MAX)
-#define M_PI            3.14159265
-#define MAX_PARTICULAS  50
+#define MAX_PARTICULAS 50
 
         typedef struct {
             float life;        // vida

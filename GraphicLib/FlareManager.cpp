@@ -7,8 +7,6 @@
 
 #include "FlareManager.h"
 
-#include <memory.h>
-#include <math.h>
 #include <cstring>
 
 // Get height from width, assuming certain aspect ratio.
@@ -27,9 +25,7 @@ FlareManager::FlareManager(Engine* engine) {
     this->loadFlareFile("GraphicLib/flare.txt");
 }
 
-FlareManager::~FlareManager() {
-    // TODO Auto-generated destructor stub
-}
+FlareManager::~FlareManager() {}
 
 int getTextureId(char* name) {
     if (strncmp(name, "crcl", strlen(name)) == 0) {
@@ -50,7 +46,7 @@ int getTextureId(char* name) {
     return 0;
 }
 
-void FlareManager::loadFlareFile(char* filename) {
+void FlareManager::loadFlareFile(const char* filename) {
     FILE* f;
     char buf[256];
 
@@ -102,8 +98,8 @@ void FlareManager::renderFlare(int lx, int ly, int cx, int cy,
     maxflaredist = isqrt(cx * cx + cy * cy);
     flaredist = isqrt((lx - cx) * (lx - cx) + (ly - cy) * (ly - cy));
     flaredistscale = (maxflaredist - flaredist) / maxflaredist;
-    flaremaxsize = (float) (SCREENwidth * this->fMaxSize);
-    flarescale = (float) (SCREENwidth * this->fScale);
+    flaremaxsize = SCREENwidth * this->fMaxSize;
+    flarescale = SCREENwidth * this->fScale;
 
     // Destination is opposite side of centre from source
     dx = cx + (cx - lx);

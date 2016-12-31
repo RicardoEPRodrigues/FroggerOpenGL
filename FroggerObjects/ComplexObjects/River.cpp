@@ -10,8 +10,6 @@
 #include "../SimpleObjects/Sphere.h"
 #include "../SimpleObjects/Cube.h"
 
-#include <cstring>
-
 River::River() :
         HitableObject(Vector3(-45, -10, -2), Vector3(45, 10, 1)) {
     MyMesh* mesh = new MyMesh();

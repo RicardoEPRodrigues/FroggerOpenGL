@@ -2,6 +2,11 @@
 #ifndef BASIC_GEOMETRY_H_
 #define BASIC_GEOMETRY_H_
 
+#include <cassert>
+#include <cstdlib>
+#include <vector>
+#include <cmath>
+#include <GL/glew.h>
 
 #define MAX_TEXTURES 4
 

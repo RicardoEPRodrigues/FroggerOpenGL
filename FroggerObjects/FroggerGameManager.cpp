@@ -15,7 +15,7 @@
 #include "Lights/Nightlight.h"
 #include "Lights/Spotlight.h"
 
-#include <math.h>
+//#include <math.h>
 
 #include <cstring>
 
@@ -258,7 +258,7 @@ void FroggerGameManager::keyPressed(unsigned char key, int xx, int yy) {
         case 'o':
             if (this->_player->isAlive()
                 && this->_player->getPosition()->getX() > -38.0f
-                && this->getGameState() == false) {
+                && !this->getGameState()) {
                 this->_player->Left();
                 (*this->_light_sources)[1]->update();
                 this->detectCollision();
@@ -268,7 +268,7 @@ void FroggerGameManager::keyPressed(unsigned char key, int xx, int yy) {
         case 'p':
             if (this->_player->isAlive()
                 && this->_player->getPosition()->getX() < 38.0f
-                && this->getGameState() == false) {
+                && !this->getGameState()) {
                 this->_player->Right();
                 (*this->_light_sources)[1]->update();
                 this->detectCollision();
@@ -278,7 +278,7 @@ void FroggerGameManager::keyPressed(unsigned char key, int xx, int yy) {
         case 'q':
             if (this->_player->isAlive()
                 && this->_player->getPosition()->getY() < 30.0f
-                && this->getGameState() == false) {
+                && !this->getGameState()) {
                 this->_player->Up();
                 (*this->_light_sources)[1]->update();
                 this->detectCollision();
@@ -288,7 +288,7 @@ void FroggerGameManager::keyPressed(unsigned char key, int xx, int yy) {
         case 'a':
             if (this->_player->isAlive()
                 && this->_player->getPosition()->getY() > -30.0f
-                && this->getGameState() == false) {
+                && !this->getGameState()) {
                 this->_player->Down();
                 (*this->_light_sources)[1]->update();
                 this->detectCollision();
@@ -310,14 +310,8 @@ void FroggerGameManager::keyPressed(unsigned char key, int xx, int yy) {
             break;
 
         case 'c':
-            if ((*this->_light_sources)[2]->isState()) {
-                for (int i = 2; i <= 7; i++) {
-                    (*this->_light_sources)[i]->setState(false);
-                }
-            } else {
-                for (int i = 2; i <= 7; i++) {
-                    (*this->_light_sources)[i]->setState(true);
-                }
+            for (int i = 2; i <= 7; i++) {
+                (*this->_light_sources)[i]->setState(!(*this->_light_sources)[2]->isState());
             }
             break;
 
@@ -336,6 +330,8 @@ void FroggerGameManager::keyPressed(unsigned char key, int xx, int yy) {
             this->_selected_camera->computeProjectionMatrix(this->_engine,
                                                             this->_ratio);
             break;
+        default:
+            break;
     }
 }
 
@@ -350,7 +346,7 @@ void FroggerGameManager::detectCollision() {
 }
 
 void FroggerGameManager::gravity() {
-    if (this->getGameState() == true) {
+    if (this->getGameState()) {
         for (int i = 0; i < 4; i++) {
             this->particle[i]->update();
         }
@@ -366,7 +362,7 @@ void FroggerGameManager::update() {
 
 void FroggerGameManager::init() {
 
-    this->GameManager::init();
+    GameManager::init();
 
     //Texture Object definition
 
@@ -428,8 +424,8 @@ void FroggerGameManager::processMouseButtons(int button, int state, int xx,
 
 void FroggerGameManager::processMouseMotion(int xx, int yy) {
     int deltaX, deltaY;
-    float alphaAux, betaAux;
-    float rAux;
+//    float alphaAux, betaAux;
+//    float rAux;
 
     deltaX = -xx + startX;
     deltaY = yy - startY;

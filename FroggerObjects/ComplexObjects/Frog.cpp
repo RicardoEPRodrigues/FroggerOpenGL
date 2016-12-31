@@ -7,7 +7,6 @@
 
 #include "Frog.h"
 
-#include <cstring>
 #include "../SimpleObjects/Sphere.h"
 #include "../SimpleObjects/Cube.h"
 

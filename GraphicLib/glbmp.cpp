@@ -487,6 +487,8 @@ static int _bmp_Decode(_bmp_read_context* p_ctx, int flags) {
         case 1:
             decoder = _bmp_Decode1;
             break;
+        default:
+            break;
     }
     /* if compressed, use that one instead (not implemented yet) */
     /*
@@ -498,7 +500,7 @@ static int _bmp_Decode(_bmp_read_context* p_ctx, int flags) {
     */
 
     /* if we don't need to reverse the order of scan lines */
-    if (!(p_ctx->info.height < 0) == !(flags & GLBMP_TOP_DOWN)) {
+    if (p_ctx->info.height >= 0 == !(flags & GLBMP_TOP_DOWN)) {
         /* start our decoder at the beginning of output buffer */
         p_rgb = p_ctx->rgb_data;
         /* go forward one line length each iteration */
