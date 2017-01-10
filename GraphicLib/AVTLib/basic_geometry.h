@@ -37,7 +37,7 @@ void createCylinder(float height, float radius, int sides, MyMesh* mesh);
 
 void createCone(float height, float baseRadius, int sides, MyMesh* mesh);
 
-void computeVAO(int numP, float* p, float* pfloatoints, int sides, float smoothCos, MyMesh* mesh);
+void computeVAO(int numP, float* p, float* pfloatoints, unsigned int sides, float smoothCos, MyMesh* mesh);
 
 int revSmoothNormal2(float* p, float* nx, float* ny, float smoothCos, int beginEnd);
 
