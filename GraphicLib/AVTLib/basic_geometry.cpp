@@ -25,7 +25,7 @@ void createSphere(float radius, int divisions, MyMesh* mesh) {
 
     float* p = circularProfile(-3.14159f / 2.0f, 3.14159f / 2.0f, radius,
                                divisions);
-    computeVAO(divisions + 1, p + 2, p, divisions * 2, 0.0f, mesh);
+    computeVAO(divisions + 1, p + 2, p, (unsigned int) divisions * 2, 0.0f, mesh);
 }
 
 void createTorus(float innerRadius, float outerRadius, int rings, int sides,
@@ -34,17 +34,18 @@ void createTorus(float innerRadius, float outerRadius, int rings, int sides,
     float tubeRadius = (outerRadius - innerRadius) * 0.5f;
     float* p = circularProfile(-3.14159f, 3.14159f, tubeRadius, sides,
                                innerRadius + tubeRadius);
-    computeVAO(sides + 1, p + 2, p, rings, 0.0f, mesh);
+    computeVAO(sides + 1, p + 2, p, (unsigned int) rings, 0.0f, mesh);
 }
 
 void createCylinder(float height, float radius, int sides, MyMesh* mesh) {
 
     float p[] = {-radius, -height * 0.5f, 0.0f, -height * 0.5f, radius, -height
-                                                                        * 0.5f, radius, height * 0.5f, 0.0f,
+                                                                        * 0.5f, radius,
+                 height * 0.5f, 0.0f,
                  height * 0.5f, -radius, height
                                          * 0.5f};
 
-    computeVAO(4, p + 2, p, sides, 0.0f, mesh);
+    computeVAO(4, p + 2, p, (unsigned int) sides, 0.0f, mesh);
 }
 
 void createCone(float height, float baseRadius, int sides, MyMesh* mesh) {
@@ -88,7 +89,7 @@ void createCone(float height, float baseRadius, int sides, MyMesh* mesh) {
     //		-baseRadius,	height*2.0f,
     //	};
 
-    computeVAO((p.size() - 4) / 2, &(p[2]), &(p[0]), sides, 0.0f, mesh);
+    computeVAO(int((p.size() - 4) / 2), &(p[2]), &(p[0]), (unsigned int) sides, 0.0f, mesh);
 }
 
 void computeVAO(int numP, float* p, float* points, unsigned int sides, float smoothCos,
@@ -121,16 +122,14 @@ void computeVAO(int numP, float* p, float* points, unsigned int sides, float smo
             else
                 delta = 0.0f;
 
-            normal[((k) * (numSides + 1) + j) * 4] = nx * cos(j * inc + delta);
+            normal[((k) * (numSides + 1) + j) * 4] = nx * float(cos(j * inc + delta));
             normal[((k) * (numSides + 1) + j) * 4 + 1] = ny;
-            normal[((k) * (numSides + 1) + j) * 4 + 2] = nx
-                                                         * sin(-j * inc + delta);
+            normal[((k) * (numSides + 1) + j) * 4 + 2] = nx * float(sin(-j * inc + delta));
             normal[((k) * (numSides + 1) + j) * 4 + 3] = 0.0f;
 
-            vertex[((k) * (numSides + 1) + j) * 4] = p[i * 2] * cos(j * inc);
+            vertex[((k) * (numSides + 1) + j) * 4] = p[i * 2] * float(cos(j * inc));
             vertex[((k) * (numSides + 1) + j) * 4 + 1] = p[(i * 2) + 1];
-            vertex[((k) * (numSides + 1) + j) * 4 + 2] = p[i * 2]
-                                                         * sin(-j * inc);
+            vertex[((k) * (numSides + 1) + j) * 4 + 2] = p[i * 2] * float(sin(-j * inc));
             vertex[((k) * (numSides + 1) + j) * 4 + 3] = 1.0f;
 
             textco[((k) * (numSides + 1) + j) * 4] = ((j + 0.0f) / numSides);
@@ -148,14 +147,15 @@ void computeVAO(int numP, float* p, float* points, unsigned int sides, float smo
                 smoothness.push_back(1);
                 for (unsigned int j = 0; j <= numSides; j++) {
 
-                    normal[((k) * (numSides + 1) + j) * 4] = nx * cos(j * inc);
+                    normal[((k) * (numSides + 1) + j) * 4] = nx * float(cos(j * inc));
                     normal[((k) * (numSides + 1) + j) * 4 + 1] = ny;
-                    normal[((k) * (numSides + 1) + j) * 4 + 2] = nx * sin(-j * inc);
+                    normal[((k) * (numSides + 1) + j) * 4 + 2] = nx * float(sin(-j * inc));
                     normal[((k) * (numSides + 1) + j) * 4 + 3] = 0.0f;
 
-                    vertex[((k) * (numSides + 1) + j) * 4] = p[(i + 1) * 2] * cos(j * inc);
+                    vertex[((k) * (numSides + 1) + j) * 4] = p[(i + 1) * 2] * float(cos(j * inc));
                     vertex[((k) * (numSides + 1) + j) * 4 + 1] = p[((i + 1) * 2) + 1];
-                    vertex[((k) * (numSides + 1) + j) * 4 + 2] = p[(i + 1) * 2] * sin(-j * inc);
+                    vertex[((k) * (numSides + 1) + j) * 4 + 2] =
+                            p[(i + 1) * 2] * float(sin(-j * inc));
                     vertex[((k) * (numSides + 1) + j) * 4 + 3] = 1.0f;
 
                     textco[((k) * (numSides + 1) + j) * 4] = ((j + 0.0f) / numSides);
@@ -246,7 +246,7 @@ int revSmoothNormal2(float* p, float* nx, float* ny, float smoothCos,
     auxY = p[1] - p[3];
     v1x = -auxY;
     v1y = auxX;
-    norm = sqrt((v1x * v1x) + (v1y * v1y));
+    norm = float(sqrt((v1x * v1x) + (v1y * v1y)));
     v1x /= norm;
     v1y /= norm;
 
@@ -254,7 +254,7 @@ int revSmoothNormal2(float* p, float* nx, float* ny, float smoothCos,
     auxY = p[3] - p[5];
     v2x = -auxY;
     v2y = auxX;
-    norm = sqrt((v2x * v2x) + (v2y * v2y));
+    norm = float(sqrt((v2x * v2x) + (v2y * v2y)));
     v2x /= norm;
     v2y /= norm;
 
@@ -272,7 +272,7 @@ int revSmoothNormal2(float* p, float* nx, float* ny, float smoothCos,
 
     }
 
-    norm = sqrt(x * x + y * y);
+    norm = float(sqrt(x * x + y * y));
 
     assert(norm != 0);
     x /= norm;
@@ -294,8 +294,8 @@ float* circularProfile(float minAngle, float maxAngle, float radius,
 
     for (int i = 0, k = -1; i < divisions + 3; ++i, ++k) {
 
-        p[i * 2] = radius * cos(minAngle + k * step) + transX;
-        p[i * 2 + 1] = radius * sin(minAngle + k * step) + transY;
+        p[i * 2] = radius * float(cos(minAngle + k * step)) + transX;
+        p[i * 2 + 1] = radius * float(sin(minAngle + k * step)) + transY;
 //		printf("%f %f\n", p[i*2], p[i * 2 + 1]);
     }
     return p;
@@ -303,10 +303,12 @@ float* circularProfile(float minAngle, float maxAngle, float radius,
 
 void createCube(float size, MyMesh* mesh) {
 
-    float p[] = {-size / sqrt(2.0f), -size * 0.5f, 0.0f, -size * 0.5f, size
-                                                                       / sqrt(2.0f), -size * 0.5f, size / sqrt(2.0f),
+    float p[] = {-size / float(sqrt(2.0f)), -size * 0.5f, 0.0f, -size * 0.5f, size
+                                                                              / float(sqrt(2.0f)),
+                 -size * 0.5f,
+                 size / float(sqrt(2.0f)),
                  size * 0.5f, 0.0f,
-                 size * 0.5f, -size / sqrt(2.0f), size * 0.5f};
+                 size * 0.5f, -size / float(sqrt(2.0f)), size * 0.5f};
 
     computeVAOCube(4, p + 2, p, 4, 0.0f, mesh);
 }
@@ -342,17 +344,17 @@ void computeVAOCube(int numP, float* p, float* points, int sides,
                 delta = 0.0f;
 
             normal[((k) * (numSides + 1) + j) * 4] = nx
-                                                     * cos(j * inc + delta + inc2);
+                                                     * float(cos(j * inc + delta + inc2));
             normal[((k) * (numSides + 1) + j) * 4 + 1] = ny;
             normal[((k) * (numSides + 1) + j) * 4 + 2] = nx
-                                                         * sin(-j * inc + delta - inc2);
+                                                         * float(sin(-j * inc + delta - inc2));
             normal[((k) * (numSides + 1) + j) * 4 + 3] = 0.0f;
 
             vertex[((k) * (numSides + 1) + j) * 4] = p[i * 2]
-                                                     * cos(j * inc + inc2);
+                                                     * float(cos(j * inc + inc2));
             vertex[((k) * (numSides + 1) + j) * 4 + 1] = p[(i * 2) + 1];
             vertex[((k) * (numSides + 1) + j) * 4 + 2] = p[i * 2]
-                                                         * sin(-j * inc - inc2);
+                                                         * float(sin(-j * inc - inc2));
             vertex[((k) * (numSides + 1) + j) * 4 + 3] = 1.0f;
 
             textco[((k) * (numSides + 1) + j) * 4] = ((j + 0.0f) / numSides);
@@ -371,18 +373,18 @@ void computeVAOCube(int numP, float* p, float* points, int sides,
                 for (int j = 0; j <= numSides; j++) {
 
                     normal[((k) * (numSides + 1) + j) * 4] = nx
-                                                             * cos(j * inc + inc2);
+                                                             * float(cos(j * inc + inc2));
                     normal[((k) * (numSides + 1) + j) * 4 + 1] = ny;
                     normal[((k) * (numSides + 1) + j) * 4 + 2] = nx
-                                                                 * sin(-j * inc - inc2);
+                                                                 * float(sin(-j * inc - inc2));
                     normal[((k) * (numSides + 1) + j) * 4 + 3] = 0.0f;
 
                     vertex[((k) * (numSides + 1) + j) * 4] = p[(i + 1) * 2]
-                                                             * cos(j * inc + inc2);
+                                                             * float(cos(j * inc + inc2));
                     vertex[((k) * (numSides + 1) + j) * 4 + 1] = p[((i + 1) * 2)
                                                                    + 1];
                     vertex[((k) * (numSides + 1) + j) * 4 + 2] = p[(i + 1) * 2]
-                                                                 * sin(-j * inc - inc2);
+                                                                 * float(sin(-j * inc - inc2));
                     vertex[((k) * (numSides + 1) + j) * 4 + 3] = 1.0f;
 
                     textco[((k) * (numSides + 1) + j) * 4] = ((j + 0.0f)
@@ -406,14 +408,14 @@ void computeVAOCube(int numP, float* p, float* points, int sides,
         for (int j = 0; j < numSides; ++j) {
 
             /*if (i != 0 || p[0] != 0.0)*/{
-                faceIndex[count++] = k * (numSides + 1) + j;
-                faceIndex[count++] = (k + 1) * (numSides + 1) + j + 1;
-                faceIndex[count++] = (k + 1) * (numSides + 1) + j;
+                faceIndex[count++] = (unsigned int) (k * (numSides + 1) + j);
+                faceIndex[count++] = (unsigned int) ((k + 1) * (numSides + 1) + j + 1);
+                faceIndex[count++] = (unsigned int) ((k + 1) * (numSides + 1) + j);
             }
             /*if (i != numP-2 || p[(numP-1)*2] != 0.0)*/{
-                faceIndex[count++] = k * (numSides + 1) + j;
-                faceIndex[count++] = k * (numSides + 1) + j + 1;
-                faceIndex[count++] = (k + 1) * (numSides + 1) + j + 1;
+                faceIndex[count++] = (unsigned int) k * (numSides + 1) + j;
+                faceIndex[count++] = (unsigned int) k * (numSides + 1) + j + 1;
+                faceIndex[count++] = (unsigned int) (k + 1) * (numSides + 1) + j + 1;
             }
 
         }

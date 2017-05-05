@@ -1,4 +1,7 @@
 
+#ifndef ATTRIB_TYPE_H_
+#define ATTRIB_TYPE_H_
+
 /// Types of Vertex Attributes
 enum AttribType {
     VERTEX_COORD_ATTRIB,
@@ -12,4 +15,4 @@ enum AttribType {
     VERTEX_ATTRIB4
 };
 
-	
+#endif /* ATTRIB_TYPE_H_ */

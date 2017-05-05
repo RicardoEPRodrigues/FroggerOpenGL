@@ -105,7 +105,7 @@ int main(int argc, char** argv) {
             GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA | GLUT_MULTISAMPLE |
             GLUT_STENCIL);
 
-    glutInitContextVersion(3, 3);
+    glutInitContextVersion(4, 5);
     glutInitContextProfile(GLUT_CORE_PROFILE);
     glutInitContextFlags(GLUT_FORWARD_COMPATIBLE | GLUT_DEBUG);
 
